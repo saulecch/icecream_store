@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icecream_store/screens/detail.dart';
 import '../data/data.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -179,10 +180,21 @@ class FeaturedListView extends StatelessWidget {
         ),
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          return Card(
-            image: carrousellPrincipal[index].values.elementAt(0).toString(),
-            name: carrousellPrincipal[index].values.elementAt(1).toString(),
-            price: carrousellPrincipal[index].values.elementAt(2).toString(),
+          return GestureDetector(
+            child: Card(
+              image: carrousellPrincipal[index].image,
+              name: carrousellPrincipal[index].name,
+              price: carrousellPrincipal[index].price,
+            ),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(
+                    helado: carrousellPrincipal[index],
+                  ),
+                ),
+              );
+            },
           );
         },
         separatorBuilder: (context, index) => const SizedBox(

@@ -1,19 +1,9 @@
-var carrousellPrincipal = [
-  {
-    'image': 'assets/images/vanilla.jpg',
-    'name': 'Vanila',
-    'price': '\$13.00',
-  },
-  {
-    'image': 'assets/images/strawberry.jpeg',
-    'name': 'strawbarry',
-    'price': '\$16.00'
-  },
-  {
-    'image': 'assets/images/coffee.jpeg',
-    'name': 'Coffee',
-    'price': '\$12.00',
-  },
+import 'models.dart';
+
+var carrousellPrincipal = const [
+  IceCream('Vanila', '\$13.00', 'assets/images/vanilla.jpg'),
+  IceCream('strawbarry', '\$16.00', 'assets/images/strawberry.jpeg'),
+  IceCream('Coffee', '\$12.00', 'assets/images/coffee.jpeg'),
 ];
 
 var gridPopular = [
